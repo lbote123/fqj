@@ -21,7 +21,7 @@ RUN cd /app \
 FROM openjdk:8-jdk-alpine as spring-docker-example
 VOLUME /tmp
 
-COPY --from=builder target/*.jar /app.jar
+COPY --from=builder /app/target/*.jar /app.jar
 
 RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
