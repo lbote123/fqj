@@ -16,7 +16,7 @@ COPY src /app/
 COPY pom.xml /app/
 
 RUN cd /app \
-    && mvn clean package
+    && mvn -Dmaven.test.skip=true clean package
 
 FROM openjdk:8-jdk-alpine as spring-docker-example
 VOLUME /tmp
