@@ -10,7 +10,7 @@
 #ENTRYPOI
 #NT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
-FROM maven as builder
+FROM lw96/docker-maven-aliyun as builder
 
 COPY src /app/src/
 COPY pom.xml /app/
