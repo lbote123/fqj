@@ -1,0 +1,25 @@
+spring:
+  redis:
+    database: 0
+    host: 192.168.1.151
+    port: 6379
+    password:
+  datasource:
+    url: jdbc:mysql://192.168.1.151:3306/springboot_docker
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  cache:
+    type: redis
+---
+spring:
+  profiles: test
+  redis:
+    host: redis01
+  datasource:
+    url: jdbc:mysql://mysql01:3306/springboot_docker
