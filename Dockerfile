@@ -12,7 +12,7 @@
 
 FROM maven as builder
 
-COPY src /app/
+COPY src /app/src/
 COPY pom.xml /app/
 
 RUN cd /app \
